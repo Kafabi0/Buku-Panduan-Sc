@@ -6,12 +6,27 @@
     <title>Study Club - Panduan Projek</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
+        /* Agar footer tetap di bawah */
         html, body {
             height: 100%;
             margin: 0;
             padding: 0;
+        }
+
+        .wrapper {
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
+        }
+
+        .content {
+            flex: 1;
+        }
+
+        /* Animasi Fade In */
+        body {
+            background-color: #f8f9fa;
+            animation: fadeIn 1s ease-in-out;
         }
 
         @keyframes fadeIn {
@@ -19,22 +34,13 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
+        /* HEADER */
         .header {
             background: linear-gradient(135deg, orange, darkorange);
             color: white;
             padding: 30px 10px;
             text-align: center;
-            position: relative;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-        }
-     .footer {
-            background: linear-gradient(135deg, orange, darkorange);
-            color: white;
-            text-align: center;
-            padding: 15px 10px;
-            width: 100%;
-            position: relative;
-            overflow: hidden;
         }
 
         .logo-container {
@@ -46,7 +52,6 @@
 
         .logo {
             width: 90px;
-            height: auto;
             transition: transform 0.3s ease-in-out;
         }
 
@@ -77,6 +82,7 @@
             to { transform: translateY(-5px); }
         }
 
+        /* MENU */
         .menu {
             margin-top: 50px;
             text-align: center;
@@ -139,19 +145,20 @@
         }
 
         /* FOOTER */
-        .marquee-text {
-            white-space: nowrap;
-            display: inline-block;
-            animation: marquee 8s linear infinite;
-            font-size: 20px;
-            font-weight: bold;
+        .footer {
+            background: linear-gradient(135deg, orange, darkorange);
+            color: white;
+            text-align: center;
+            padding: 15px 10px;
+            width: 100%;
+            overflow: hidden;
+            margin-top: auto;
         }
 
         .footer-text {
             font-size: 20px;
             font-weight: bold;
             white-space: nowrap;
-            color: white;
             display: inline-block;
             animation: marquee 10s linear infinite;
         }
@@ -187,41 +194,38 @@
             .footer-text {
                 font-size: 16px;
             }
-            .marquee-text {
-                font-size: 16px;
-            }
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <div class="logo-container">
-            <img src="Logo Himatif.png" alt="Logo Himatif" class="logo">
-            <img src="logo-POLINDRA.png" alt="Logo POLINDRA" class="logo">
+    <div class="wrapper">
+        <div class="header">
+            <div class="logo-container">
+                <img src="Logo Himatif.png" alt="Logo Himatif" class="logo">
+                <img src="logo-POLINDRA.png" alt="logo-POLINDRA" class="logo">
+            </div>
+            
+            <h1>Buku Panduan</h1>
+            <h1>Pembuatan Projek</h1>
+            <p class="Study">Study Club</p>
+            <p class="himatif">HIMATIF</p>
         </div>
-        
-        <h1>Buku Panduan</h1>
-        <h1>Pembuatan Projek</h1>
-        <p class="Study">Study Club</p>
-        <p class="himatif">HIMATIF</p>
-    </div>
 
-    <div class="container d-flex flex-column align-items-center menu">
-        <a href="klasifikasi.html" class="btn btn-primary">📌 Klasifikasi Projek</a>
-        <a href="TimeLine.html" class="btn btn-primary">📅 Timeline</a>
-        <a href="ketentuan.html" class="btn btn-warning">📜 Ketentuan Pembuatan Projek</a>
-        <a href="https://wa.me/6281223506238?text=Halo,%20saya%20ingin%20mengetahui%20info%20lebih%20lanjut!" class="btn btn-success">
-            📩 Info Lebih Lanjut?
-        </a>
-    </div>
+        <div class="content d-flex flex-column align-items-center menu">
+            <a href="klasifikasi.html" class="btn btn-primary">📌 Klasifikasi Projek</a>
+            <a href="TimeLine.html" class="btn btn-primary">📅 Timeline</a>
+            <a href="ketentuan.html" class="btn btn-warning">📜 Ketentuan Pembuatan Projek</a>
+            <a href="https://wa.me/6281223506238?text=Halo,%20saya%20ingin%20mengetahui%20info%20lebih%20lanjut!" class="btn btn-success">
+                📩 Info Lebih Lanjut?
+            </a>
+        </div>
 
-    <!-- FOOTER -->
-    <div class="footer">
-        <span class="footer-text">📖 Buku Panduan Pembuatan Projek - Study Club HIMATIF 16📖</span>
+        <!-- FOOTER -->
+        <div class="footer">
+            <span class="footer-text">📖 Buku Panduan Pembuatan Projek - Study Club HIMATIF 16📖</span>
+        </div>
     </div>
-
-    <!-- AUDIO -->
-    <audio id="background-music" loop>
+<audio id="background-music" loop>
         <source src="30BGM223 AM  .mp3" type="audio/mpeg">
         Browser Anda tidak mendukung tag audio.
     </audio>
