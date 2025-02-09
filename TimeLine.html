@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ketentuan Projek</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Wrapper agar footer selalu di bawah */
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .content {
+            flex: 1;
+        }
+
+        /* Header & Footer */
+        .header, .footer {
+            background: linear-gradient(135deg, orange, darkorange);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .footer {
+            width: 100%;
+            margin-bottom: 0 !important;
+        }
+
+        /* Animasi teks berjalan di footer */
+        .marquee-text {
+            white-space: nowrap;
+            display: inline-block;
+            animation: marquee 8s linear infinite;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        @keyframes marquee {
+            from { transform: translateX(100%); }
+            to { transform: translateX(-100%); }
+        }
+
+        /* Header untuk logo & tombol kembali */
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        .logo-container img {
+            width: 60px;
+            height: auto;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .logo-container img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Responsif */
+        @media (max-width: 768px) {
+            .marquee-text {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <!-- HEADER -->
+        <div class="header">
+            <h1>Ketentuan Projek</h1>
+        </div>
+
+        <!-- HEADER: Logo & Tombol Kembali -->
+        <div class="header-container">
+            <div class="back-button">
+                <a href="index.html" class="btn btn-primary">
+                    <i class="fa-solid fa-hand-point-left"></i> Kembali
+                </a>
+            </div>
+
+            <div class="logo-container">
+                <img src="Logo Himatif.png" alt="Logo">
+            </div>
+        </div>
+
+        <!-- KONTEN UTAMA -->
+        <div class="content container mt-4">
+            <h2 class="text-primary">📅 Timeline Pembuatan Projek</h2>
+            <ul class="list-group">
+                <li class="list-group-item">Pembuatan Projek : 23 Februari</li>
+                <li class="list-group-item">Pengumpulan Projek : 19 April</li>
+            </ul>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            <span class="marquee-text">📖 Buku Panduan Pembuatan Projek - HIMATIF 📖</span>
+        </div>
+    </div>
+
+    <!-- AUDIO -->
+    <audio id="background-music" loop>
+        <source src="30BGM223 AM  .mp3" type="audio/mpeg">
+        Browser Anda tidak mendukung tag audio.
+    </audio>
+
+    <!-- SCRIPT UNTUK MEMAINKAN AUDIO OTOMATIS -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var music = document.getElementById("background-music");
+
+            // Coba putar otomatis
+            music.play().catch(function () {
+                console.log("Autoplay diblokir, menunggu interaksi pengguna...");
+                
+                // Tunggu interaksi pertama
+                document.addEventListener("click", playMusicOnce);
+                document.addEventListener("scroll", playMusicOnce);
+            });
+
+            function playMusicOnce() {
+                music.play();
+                document.removeEventListener("click", playMusicOnce);
+                document.removeEventListener("scroll", playMusicOnce);
+            }
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
