@@ -14,7 +14,6 @@
             padding: 0;
         }
 
-        /* Wrapper agar footer selalu di bawah */
         .wrapper {
             display: flex;
             flex-direction: column;
@@ -25,7 +24,6 @@
             flex: 1;
         }
 
-        /* Header & Footer */
         .header, .footer {
             background: linear-gradient(135deg, orange, darkorange);
             color: white;
@@ -53,11 +51,12 @@
             to { transform: translateX(-100%); }
         }
 
-        /* Header untuk logo & tombol kembali */
+        /* Header lebih responsif */
         .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
             padding: 10px 20px;
         }
 
@@ -74,7 +73,21 @@
         /* Responsif */
         @media (max-width: 768px) {
             .marquee-text {
-                font-size: 16px;
+                font-size: 14px;
+            }
+
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .back-button {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            .logo-container img {
+                width: 50px;
             }
         }
     </style>
@@ -101,18 +114,14 @@
         </div>
 
         <!-- KONTEN UTAMA -->
-        <div class="content container mt-4">
+        <div class="content container mt-4 text-center">
             <h2 class="text-primary">📅 Timeline Pembuatan Projek</h2>
-            <div class="d-flex flex-column align-items-center justify-content-center vh-100 text-center">
+            <div class="d-flex flex-column align-items-center justify-content-center text-center">
                 <h1 class="fw-bold text-primary">🚀 Coming Soon 🚀</h1>
                 <p class="lead text-muted">Kami sedang menyiapkan sesuatu yang keren untuk Anda!</p>
                 <p class="text-secondary">Tunggu tanggal mainnya! 🎉</p>
                 <button class="btn btn-primary btn-lg mt-3">Stay Tuned!</button>
             </div>
-            <!-- <ul class="list-group">
-                <li class="list-group-item">Pembuatan Projek : 23 Februari</li>
-                <li class="list-group-item">Pengumpulan Projek : 19 April</li>
-            </ul> -->
         </div>
 
         <!-- FOOTER -->
