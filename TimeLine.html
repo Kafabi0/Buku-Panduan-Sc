@@ -24,48 +24,25 @@
             flex: 1;
         }
 
-        .header, .footer {
+        .header {
             background: linear-gradient(135deg, orange, darkorange);
             color: white;
-            text-align: center;
             padding: 10px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-        }
-
-        .footer {
-            width: 100%;
-            margin-bottom: 0 !important;
-        }
-
-        /* Animasi teks berjalan */
-        .marquee-text {
-            white-space: nowrap;
-            display: inline-block;
-            animation: marquee 8s linear infinite;
-            font-size: 16px;
-            font-weight: bold;
-        }
-
-        @keyframes marquee {
-            from { transform: translateX(100%); }
-            to { transform: translateX(-100%); }
-        }
-
-        /* Header lebih responsif */
-        .header-container {
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
-            padding: 10px 20px;
+            justify-content: space-between;
         }
 
-        .back-button {
-            flex: 1;
+        .header h1 {
+            margin: 0;
+            font-size: 20px;
+            flex-grow: 1;
+            text-align: center;
         }
 
         .logo-container img {
-            width: 60px;
+            width: 50px;
             height: auto;
             transition: transform 0.3s ease-in-out;
         }
@@ -74,25 +51,50 @@
             transform: scale(1.1);
         }
 
+        .footer {
+            background: linear-gradient(135deg, orange, darkorange);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            width: 100%;
+        }
+
+        /* Animasi teks berjalan */
+        .marquee-container {
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .marquee-text {
+            display: inline-block;
+            animation: marquee 8s linear infinite;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        @keyframes marquee {
+            from { transform: translateX(100%); }
+            to { transform: translateX(-100%); }
+        }
+
         /* Responsif */
         @media (max-width: 768px) {
-            .marquee-text {
-                font-size: 14px;
+            .header {
+                flex-direction: row;
+                text-align: center;
+                padding: 8px;
             }
 
-            .header-container {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .back-button {
-                width: 100%;
-                text-align: center;
-                margin-bottom: 10px;
+            .header h1 {
+                font-size: 18px;
             }
 
             .logo-container img {
-                width: 50px;
+                width: 40px;
+            }
+
+            .marquee-text {
+                font-size: 12px;
             }
         }
     </style>
@@ -102,18 +104,11 @@
     <div class="wrapper">
         <!-- HEADER -->
         <div class="header">
-            <h1 class="h4">Timeline</h1>
-        </div>
-
-        <!-- HEADER: Logo & Tombol Kembali -->
-        <div class="header-container">
-            <div class="back-button text-start">
-                <a href="index.html" class="btn btn-primary btn-sm">
-                    <i class="fa-solid fa-hand-point-left"></i> Kembali
-                </a>
-            </div>
-
-            <div class="logo-container text-end">
+            <a href="index.html" class="btn btn-primary btn-sm">
+                <i class="fa-solid fa-hand-point-left"></i> Kembali
+            </a>
+            <h1>Timeline</h1>
+            <div class="logo-container">
                 <img src="Logo Himatif.png" alt="Logo">
             </div>
         </div>
@@ -131,7 +126,9 @@
 
         <!-- FOOTER -->
         <div class="footer">
-            <span class="marquee-text">📖 Buku Panduan Pembuatan Projek - HIMATIF 16📖</span>
+            <div class="marquee-container">
+                <span class="marquee-text">📖 Buku Panduan Pembuatan Projek - HIMATIF 16📖</span>
+            </div>
         </div>
     </div>
 
@@ -146,11 +143,8 @@
         document.addEventListener("DOMContentLoaded", function () {
             var music = document.getElementById("background-music");
 
-            // Coba putar otomatis
             music.play().catch(function () {
                 console.log("Autoplay diblokir, menunggu interaksi pengguna...");
-                
-                // Tunggu interaksi pertama
                 document.addEventListener("click", playMusicOnce);
                 document.addEventListener("scroll", playMusicOnce);
             });
