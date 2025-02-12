@@ -14,7 +14,6 @@
             padding: 0;
         }
 
-        /* Wrapper untuk memenuhi tinggi layar */
         .wrapper {
             display: flex;
             flex-direction: column;
@@ -25,7 +24,6 @@
             flex: 1;
         }
 
-        /* Header dan Footer */
         .header, .footer {
             background: linear-gradient(135deg, orange, darkorange);
             color: white;
@@ -36,10 +34,10 @@
 
         .footer {
             width: 100%;
-            margin-bottom: 0 !important; /* Mencegah space kosong */
+            margin-bottom: 0 !important;
         }
 
-        /* Animasi teks bergerak di footer */
+        /* Animasi teks berjalan */
         .marquee-text {
             white-space: nowrap;
             display: inline-block;
@@ -53,15 +51,15 @@
             to { transform: translateX(-100%); }
         }
 
-        /* Header untuk logo & tombol kembali */
+        /* Header lebih fleksibel */
         .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
             padding: 10px 20px;
         }
 
-        /* Ukuran logo */
         .logo-container img {
             width: 60px;
             height: auto;
@@ -75,7 +73,22 @@
         /* Responsif */
         @media (max-width: 768px) {
             .marquee-text {
-                font-size: 16px;
+                font-size: 14px;
+            }
+
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .back-button {
+                width: 100%;
+                margin-bottom: 10px;
+                text-align: center;
+            }
+
+            .logo-container img {
+                width: 50px;
             }
         }
     </style>
@@ -102,11 +115,11 @@
         </div>
 
         <!-- KONTEN UTAMA -->
-        <div class="content container mt-4">
+        <div class="content container mt-4 text-center">
             <h2 class="text-primary">📌 Klasifikasi Projek</h2>
             <p>Berikut adalah klasifikasi projek yang harus dibuat:</p>
 
-            <div class="row">
+            <div class="row g-3">
                 <div class="col-lg-6 col-md-6 col-sm-12">
                     <div class="card shadow-sm">
                         <div class="card-body">
@@ -124,7 +137,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
 
         <!-- FOOTER -->
