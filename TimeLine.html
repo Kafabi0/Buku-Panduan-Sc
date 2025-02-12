@@ -28,7 +28,7 @@
             background: linear-gradient(135deg, orange, darkorange);
             color: white;
             text-align: center;
-            padding: 15px;
+            padding: 10px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
         }
 
@@ -37,12 +37,12 @@
             margin-bottom: 0 !important;
         }
 
-        /* Animasi teks berjalan di footer */
+        /* Animasi teks berjalan */
         .marquee-text {
             white-space: nowrap;
             display: inline-block;
             animation: marquee 8s linear infinite;
-            font-size: 18px;
+            font-size: 16px;
             font-weight: bold;
         }
 
@@ -58,6 +58,10 @@
             align-items: center;
             flex-wrap: wrap;
             padding: 10px 20px;
+        }
+
+        .back-button {
+            flex: 1;
         }
 
         .logo-container img {
@@ -83,6 +87,7 @@
 
             .back-button {
                 width: 100%;
+                text-align: center;
                 margin-bottom: 10px;
             }
 
@@ -97,18 +102,18 @@
     <div class="wrapper">
         <!-- HEADER -->
         <div class="header">
-            <h1>Timeline</h1>
+            <h1 class="h4">Timeline</h1>
         </div>
 
         <!-- HEADER: Logo & Tombol Kembali -->
         <div class="header-container">
-            <div class="back-button">
-                <a href="index.html" class="btn btn-primary">
+            <div class="back-button text-start">
+                <a href="index.html" class="btn btn-primary btn-sm">
                     <i class="fa-solid fa-hand-point-left"></i> Kembali
                 </a>
             </div>
 
-            <div class="logo-container">
+            <div class="logo-container text-end">
                 <img src="Logo Himatif.png" alt="Logo">
             </div>
         </div>
